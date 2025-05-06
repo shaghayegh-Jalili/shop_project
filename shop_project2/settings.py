@@ -34,7 +34,7 @@ ROOT_URLCONF = 'shop_project2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "shop" / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -64,3 +64,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# this line tells django to user our own authentication model
+AUTH_USER_MODEL = 'accounts.User'
+
+MEDIA_ROOT = "media"
+MEDIA_URL = "media/"
